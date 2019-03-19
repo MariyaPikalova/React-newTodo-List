@@ -1,0 +1,100 @@
+.todoMainList {
+    width: 50% ;
+}
+.section input {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid lightgray;
+    width: 350px;}
+
+#input-text {
+    padding: 15px;
+}
+
+button {
+    padding:13px;
+    font-size:15px;
+    margin: 10px;
+    margin-right: 0px;
+    background-color: lightslategrey;
+    border: 2px solid lightslategrey;
+    /*color: white;*/
+}
+button:hover {
+    background-color: #e0e0eb;
+    border: 2px solid #e0e0eb;
+    cursor: pointer;
+}
+.taskList li{
+    background-color: rgba(255, 255, 255, .7);
+    padding:15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+ul.taskList {
+    padding: 0;
+}
+.filter-field input {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid lightgray;
+    width: 96.5%;
+}
+.completed {
+    text-decoration: line-through;
+}
+.navigation {
+    list-style: none;
+    margin: 0;
+    background: lightslategrey;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: black;
+}
+
+.navigation a:hover {
+    background: #e0e0eb;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .navigation {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+        padding: 0;
+    }
+
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255,255,255,0.3);
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+}
+[class*="fa fa-trash"] {
+    display: flex;
+    padding-left: 90%;
+}

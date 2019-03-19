@@ -5,10 +5,12 @@
     padding: 12px;
     font-size: 16px;
     border: 2px solid lightgray;
-    width: 350px;}
+    width: 350px;
+}
 
 #input-text {
     padding: 15px;
+    margin-right: 5px;
 }
 
 button {
@@ -18,13 +20,14 @@ button {
     margin-right: 0px;
     background-color: lightslategrey;
     border: 2px solid lightslategrey;
-    /*color: white;*/
 }
+
 button:hover {
     background-color: #e0e0eb;
     border: 2px solid #e0e0eb;
     cursor: pointer;
 }
+
 .taskList li{
     background-color: rgba(255, 255, 255, .7);
     padding:15px;
@@ -36,15 +39,18 @@ button:hover {
 ul.taskList {
     padding: 0;
 }
+
 .filter-field input {
     padding: 12px;
     font-size: 16px;
     border: 2px solid lightgray;
     width: 96.5%;
 }
+
 .completed {
     text-decoration: line-through;
 }
+
 .navigation {
     list-style: none;
     margin: 0;
@@ -88,7 +94,6 @@ ul.taskList {
         border-top: 1px solid rgba(255,255,255,0.3);
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-
 
     .navigation li:last-of-type a {
         border-bottom: none;

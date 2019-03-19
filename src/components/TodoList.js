@@ -14,6 +14,7 @@ class TodoList extends Component {
     this.addItem = this.addItem.bind(this);
     this.removeTask = this.removeTask.bind(this);
     this.filterTask = this.filterTask.bind(this);
+    this.filterDates = this.filterDates.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
     this.sortTask = this.sortTask.bind(this);
     this.sortDates = this.sortDates.bind(this);
@@ -71,13 +72,27 @@ class TodoList extends Component {
     }
   }
 
+  filterDates(e){
+    console.log(e.target.value);
+    this.setState({
+      items: this.state.items.filter(value =>
+        value.date.indexOf(e.target.value)!== -1
+      )
+    });
+    if (e.target.value === ""){
+      this.setState({
+        items: JSON.parse(localStorage.getItem('tasks'))
+      });
+    }
+  }
+
   toggleStatus(index) {
     const itemsArr = [...this.state.items];
     const resItem = itemsArr.findIndex(item => item.key === index);
     const resElement = itemsArr[resItem];
     // console.log(resElement);
     const resValue = {...resElement, isComplete: true};
-    itemsArr.splice(resItem, 1, resValue)
+    itemsArr.splice(resItem, 1, resValue);
 
     this.setState({
       items: [...itemsArr]
@@ -142,6 +157,11 @@ class TodoList extends Component {
           <input type=""
                  onChange={this.filterTask}
           />
+          <p>Filter date:</p>
+          <input type="date"
+                 onChange={this.filterDates}
+          />
+
         </div>
         <TodoItems entries={this.state.items}
                    delete={this.removeTask}

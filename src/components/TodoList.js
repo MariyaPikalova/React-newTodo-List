@@ -129,6 +129,7 @@ class TodoList extends Component {
 
 
   render() {
+
     return (
 
       <div className="todoListMain">
@@ -161,7 +162,6 @@ class TodoList extends Component {
           <input type="date"
                  onChange={this.filterDates}
           />
-
         </div>
         <TodoItems entries={this.state.items}
                    delete={this.removeTask}

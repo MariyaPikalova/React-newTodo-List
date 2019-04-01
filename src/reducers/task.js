@@ -1,6 +1,6 @@
 const initialState = [];
 let flag;
-
+let sortList;
 
 export default function list(state = initialState, action) {
   switch(action.type) {
@@ -28,7 +28,9 @@ export default function list(state = initialState, action) {
         const y = b.text.toLowerCase();
         return (flag ? x > y : x < y);
       });
-      return [...sorted];
+      sortList = [...sorted];
+      return sortList;
+
 
     case 'SORT_DATE':
       flag = !flag;
@@ -38,15 +40,16 @@ export default function list(state = initialState, action) {
         const y = new Date(b.date).getTime();
         return (flag ? x > y : x < y);
       });
-      return [...sortedDate];
+      sortList = [...sortedDate];
+      return sortList;
 
     case 'FILTER_TASK':
-      let filterItems = state.filter(value =>
+      let filterItems = sortList.filter(value =>
          value.text.indexOf(action.payload)!== -1)
        return filterItems;
 
     case 'FILTER_DATE':
-      let filterDate = state.filter(value =>
+      let filterDate = sortList.filter(value =>
         value.date.indexOf(action.payload)!== -1
       )
       return filterDate;
